@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear cuenta | RopaClínica</title>
+  <meta name="description" content="Registro de personal de bodega: digitador, jefe de digitadores o repartidor." />
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+
+  <!-- Mismo encabezado que index.html, para que se vea igual en todo el sitio -->
+  <header class="site-header">
+    <div class="contenedor cabecera-flex">
+      <a href="index.html" class="logo">RopaClínica</a>
+      <nav aria-label="Navegación principal">
+        <a href="index.html" class="btn-nav">Inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="seccion registro">
+      <div class="contenedor">
+
+        <h1>Crea tu cuenta</h1>
+        <p class="registro-texto">Completa tus datos y selecciona tu rol en la bodega.</p>
+
+        
+        <form class="formulario" action="#" method="post">
+
+          
+          <div class="campo">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ej: María Torres" required />
+          </div>
+
+          <div class="campo">
+            <label for="correo">Correo institucional</label>
+            
+            <input type="email" id="correo" name="correo" placeholder="nombre@hospital.cl" required />
+          </div>
+
+          <div class="campo">
+            <label for="rol">Rol en la bodega</label>
+            
+            <select id="rol" name="rol" required>
+              <option value="" selected disabled>Selecciona tu rol</option>
+              <option value="digitador">Digitador</option>
+              <option value="jefe">Jefe de digitadores</option>
+              <option value="repartidor">Repartidor</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="clave">Contraseña</label>
+            
+            <input type="password" id="clave" name="clave" required minlength="8" />
+          </div>
+
+          
+          <button type="submit" class="boton boton-ancho">Crear cuenta</button>
+
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="contenedor">
+      <p>&copy; 2026 RopaClínica — Proyecto académico DSY1104, Desarrollo Fullstack II.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
