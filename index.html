@@ -1,21 +1,66 @@
-
+<!-- 
+  Todo documento HTML empieza declarando qué "versión" de HTML se usa.
+  <!DOCTYPE html> le dice al navegador: "esto es HTML5".
+-->
 <!DOCTYPE html>
 
+<!-- 
+  <html> es la etiqueta que envuelve TODO el documento.
+  lang="es" le dice al navegador (y a lectores de pantalla) que el
+  contenido está en español.
+-->
 <html lang="es">
 
+<!-- 
+  <head> no se ve en la página. Aquí va información "técnica":
+  el título de la pestaña, la codificación de caracteres,
+  la descripción para buscadores, y el link a nuestro CSS.
+-->
 <head>
+
+  <!-- Le dice al navegador que el texto usa codificación UTF-8 (para que tildes y ñ se vean bien) -->
   <meta charset="UTF-8" />
+
+  <!-- Hace que la página se vea bien en celulares, ajustando el ancho al del dispositivo -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Esto es lo que aparece en la pestaña del navegador -->
   <title>RopaClínica | Gestión de ropa clínica hospitalaria</title>
+
+  <!-- Descripción corta que usan los buscadores (Google, etc.) para mostrar el sitio -->
   <meta name="description" content="RopaClínica: sistema de registro y control de stock de ropa clínica para hospitales." />
+
+  <!-- 
+    Aquí conectamos el archivo CSS (css/estilos.css) con este HTML.
+    El HTML da la estructura y el contenido; el CSS le da el color,
+    las formas y el orden visual. Por eso van en archivos separados.
+  -->
   <link rel="stylesheet" href="css/estilos.css" />
+
 </head>
 
+<!-- <body> es TODO lo que sí se ve en la página -->
 <body>
+
+  <!-- 
+    ===== ENCABEZADO =====
+    <header> es una etiqueta "semántica": no hace nada especial por sí
+    sola, pero le indica al navegador (y a nosotros al leer el código)
+    que esta parte es el encabezado del sitio.
+  -->
   <header class="site-header">
 
+    <!-- 
+      class="contenedor" no es una etiqueta HTML especial, es un nombre
+      que nosotros inventamos y usamos en el CSS para darle un ancho
+      máximo y centrar el contenido en la pantalla.
+    -->
     <div class="contenedor cabecera-flex">
+
+      <!-- El logo del sitio, que además es un link que vuelve al inicio -->
       <a href="index.html" class="logo">RopaClínica</a>
+
+      <!-- <nav> = navegación. Aquí solo tenemos un botón que lleva al registro -->
       <nav aria-label="Navegación principal">
         <a href="registro.html" class="btn-nav">Crear cuenta</a>
       </nav>
@@ -23,34 +68,63 @@
     </div>
   </header>
 
+  <!-- 
+    <main> envuelve el contenido "principal" de la página
+    (todo lo que no es encabezado ni pie de página).
+  -->
   <main>
 
+    <!-- 
+      ===== HERO =====
+      El "hero" es el nombre que se le da al primer bloque grande
+      que ve la persona al entrar al sitio: título, texto corto y botón.
+    -->
     <section class="hero">
       <div class="contenedor">
 
+        <!-- Texto pequeño arriba del título, para dar contexto -->
         <p class="eyebrow">Bodega hospitalaria</p>
 
+        <!-- 
+          <h1> es el título más importante de la página.
+          Cada página debería tener solo un <h1>.
+        -->
         <h1>Control de ropa clínica, sin planillas ni papel perdido.</h1>
 
+        <!-- <p> = párrafo de texto normal -->
         <p class="hero-texto">
           Reemplaza el registro manual de sábanas, cobertores y ropa de pabellón por un
           sistema único, con menos pérdidas y menos errores entre bodega y lavandería.
         </p>
 
-        
+        <!-- Este link se ve como un botón gracias al CSS (clase "boton") -->
         <a href="registro.html" class="boton">Crear cuenta de personal</a>
 
       </div>
     </section>
 
+    <!-- 
+      ===== ROLES =====
+      <section> agrupa un bloque de contenido relacionado, en este caso
+      la explicación de los 3 roles del sistema.
+    -->
     <section class="seccion">
       <div class="contenedor">
 
-       
+        <!-- <h2> = subtítulo, un nivel bajo el <h1> -->
         <h2>Un rol para cada tarea</h2>
 
+        <!-- 
+          Esta caja contiene las 3 tarjetas. En el CSS, "tarjetas" está
+          configurado como una grilla (grid) que acomoda las tarjetas
+          en columnas automáticamente según el ancho de pantalla.
+        -->
         <div class="tarjetas">
 
+          <!-- 
+            <article> se usa para un bloque de contenido que tiene
+            sentido "por sí solo", como cada una de estas tarjetas.
+          -->
           <article class="tarjeta">
             <h3>Digitador</h3>
             <p>Registra cada préstamo y devolución de ropa al momento en que ocurre.</p>
@@ -74,9 +148,12 @@
 
   <!-- 
     ===== PIE DE PÁGINA =====
+    <footer> es la parte de abajo del sitio, normalmente con
+    información como derechos de autor o links secundarios.
   -->
   <footer class="site-footer">
     <div class="contenedor">
+      <!-- &copy; es el símbolo © escrito en "código" HTML -->
       <p>&copy; 2026 RopaClínica — Proyecto académico DSY1104, Desarrollo Fullstack II.</p>
     </div>
   </footer>

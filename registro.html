@@ -26,10 +26,24 @@
         <h1>Crea tu cuenta</h1>
         <p class="registro-texto">Completa tus datos y selecciona tu rol en la bodega.</p>
 
-        
+        <!-- 
+          <form> es la etiqueta que agrupa todos los campos que la
+          persona va a llenar. 
+          - action="#": normalmente aquí iría la dirección del servidor
+            que recibe los datos. Como en esta Fase 1 solo hacemos HTML
+            y CSS (sin programación de backend), lo dejamos como "#".
+          - method="post": es la forma en que se enviarían los datos
+            (no se ve reflejada en esta fase, pero es buena práctica
+            dejarla definida desde ya).
+        -->
         <form class="formulario" action="#" method="post">
 
-          
+          <!-- 
+            Cada "campo" es un bloque con su etiqueta (<label>) y su
+            casilla (<input>). El "for" del label y el "id" del input
+            deben ser iguales: así, si haces clic en el texto "Nombre
+            completo", el cursor salta directo a la casilla.
+          -->
           <div class="campo">
             <label for="nombre">Nombre completo</label>
             <input type="text" id="nombre" name="nombre" placeholder="Ej: María Torres" required />
@@ -37,13 +51,18 @@
 
           <div class="campo">
             <label for="correo">Correo institucional</label>
-            
+            <!-- type="email" hace que el navegador valide que sea un correo válido (que tenga @, etc.) -->
             <input type="email" id="correo" name="correo" placeholder="nombre@hospital.cl" required />
           </div>
 
           <div class="campo">
             <label for="rol">Rol en la bodega</label>
-            
+            <!-- 
+              <select> crea un menú desplegable. Cada <option> es una
+              alternativa. La primera opción está "disabled" (no se
+              puede elegir) para que funcione como un texto de ayuda
+              tipo "Selecciona tu rol".
+            -->
             <select id="rol" name="rol" required>
               <option value="" selected disabled>Selecciona tu rol</option>
               <option value="digitador">Digitador</option>
@@ -54,11 +73,14 @@
 
           <div class="campo">
             <label for="clave">Contraseña</label>
-            
+            <!-- type="password" oculta lo que se escribe con puntos. minlength=8 exige al menos 8 caracteres -->
             <input type="password" id="clave" name="clave" required minlength="8" />
           </div>
 
-          
+          <!-- 
+            <button type="submit"> es el botón que, en un sistema real,
+            enviaría el formulario. Por ahora solo cumple el rol visual.
+          -->
           <button type="submit" class="boton boton-ancho">Crear cuenta</button>
 
         </form>
