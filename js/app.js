@@ -97,3 +97,50 @@ document.addEventListener("click", e => {
 });
 
 guardarCarrito(leerCarrito()); // pinta el contador del header y el carrito (si la página lo tiene)
+
+/* ---------- Validación del formulario de pedido (en tiempo real) ----------
+   Cada campo declara sus reglas en el HTML con atributos data-*:
+   required, data-max, data-tipo (correo) */
+function mensajePedido(el) {
+  const v = el.value.trim(), d = el.dataset;
+  const nombreCampo = el.labels[0].textContent.toLowerCase();
+  if (!v) return el.required ? `El campo ${nombreCampo} es obligatorio.` : "";
+  if (d.max && v.length > Number(d.max)) return `Máximo ${d.max} caracteres (llevas ${v.length}).`;
+  if (d.tipo === "correo" && !/^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/i.test(v))
+    return "Usa un correo @duoc.cl, @profesor.duoc.cl o @gmail.com.";
+  return "";
+}
+
+function mostrarPedido(el) {
+  const m = mensajePedido(el);
+  let s = el.parentElement.querySelector(".error");
+  if (!s) { s = document.createElement("small"); s.className = "error"; el.parentElement.append(s); }
+  s.textContent = m;
+  el.classList.toggle("invalido", !!m);
+  el.classList.toggle("valido", !m && el.value.trim() !== "");
+  return !m;
+}
+
+const formPedido = $("#form-pedido");
+if (formPedido) {
+  const campos = $$("input", formPedido), res = $(".resultado", formPedido);
+  campos.forEach(c => {
+    c.addEventListener("input", () => mostrarPedido(c));
+    c.addEventListener("blur", () => mostrarPedido(c));
+  });
+  formPedido.addEventListener("submit", e => {
+    e.preventDefault();
+    if (!leerCarrito().length) { res.textContent = "Tu carrito está vacío."; return; }
+    if (campos.map(mostrarPedido).every(Boolean)) {
+      const correo = $("#correo").value.trim();
+      localStorage.removeItem("cupon");
+      localStorage.setItem("carrito", "[]");
+      $("#contador").textContent = "0";
+      $("#carrito").innerHTML = `<p class="titulo">¡Gracias por tu compra! Confirmamos tu pedido a <strong>${correo}</strong> (simulado). <a href="productos.html">Seguir comprando</a></p>`;
+      $("#bloque-pedido").hidden = true;
+    } else {
+      res.textContent = "";
+      $(".invalido", formPedido).focus();
+    }
+  });
+}
