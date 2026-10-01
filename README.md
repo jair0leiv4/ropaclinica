@@ -58,10 +58,4 @@ también funciona, salvo el video en algunos navegadores por política de archiv
 El detalle de requerimientos, mockups y especificación completa está en el documento ERS
 (Anexo 4) y en la Planilla de Requerimientos (Anexo 2), entregados junto con este repositorio.
 
-## Pendiente para futuras evaluaciones
 
-- Servidor y base de datos (API) para productos, pedidos y stock.
-- Inicio de sesión y registro de clientes.
-- Panel de administración (crear, editar y eliminar productos; control de stock).
-- Envío real del formulario de pedido y pago en línea.
-- Historial de pedidos del cliente.
