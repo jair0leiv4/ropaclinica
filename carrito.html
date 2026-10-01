@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi carrito | RopaClínica</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <!-- El menú y el pie se generan desde js/app.js -->
+  <header class="site-header"></header>
+  <main>
+    <section class="seccion">
+      <div class="contenedor">
+        <h1 class="titulo">Mi carrito de compras</h1>
+        <div id="carrito"></div>
+
+        <div class="formulario ancho" id="bloque-pedido" hidden>
+          <h2>Datos de contacto para tu pedido</h2>
+          <p class="resultado" role="status"></p>
+          <form id="form-pedido" novalidate>
+            <div class="campo">
+              <label for="nombre">Nombre completo</label>
+              <input id="nombre" name="nombre" data-max="100" required />
+            </div>
+            <div class="campo">
+              <label for="correo">Correo</label>
+              <input id="correo" name="correo" type="email" data-tipo="correo" data-max="100" required placeholder="nombre@duoc.cl" />
+            </div>
+            <div class="campo">
+              <label for="direccion">Dirección de despacho</label>
+              <input id="direccion" name="direccion" data-max="300" required />
+            </div>
+            <button type="submit" class="boton boton-ancho">Confirmar y pagar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

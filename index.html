@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda de ropa clínica | RopaClínica</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <!-- El menú y el pie se generan desde js/app.js -->
+  <header class="site-header"></header>
+  <main>
+    <section class="hero">
+      <div class="contenedor">
+        <p class="eyebrow">Tienda online</p>
+        <h1>Ropa de cama y de paciente para tu hospital.</h1>
+        <p class="hero-texto">Sábanas, cobertores, cubrecamas y camisas de paciente, en versión adulto y pediátrica, en telas que resisten el lavado hospitalario.</p>
+        <a href="productos.html" class="boton">Ver productos</a>
+      </div>
+    </section>
+    <section class="seccion">
+      <div class="contenedor">
+        <h2>Cómo cuidamos tu ropa clínica</h2>
+        <div class="video-envoltorio">
+          <video controls preload="metadata" poster="">
+            <source src="media/cuidado-ropa-clinica.mp4" type="video/mp4" />
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+        <p class="video-texto">Video informativo: por qué nuestras prendas resisten el lavado hospitalario a alta temperatura.</p>
+      </div>
+    </section>
+    <section class="seccion">
+      <div class="contenedor">
+        <h2>Productos destacados</h2>
+        <div class="grilla" id="lista-productos" data-max="4"></div>
+        <p class="ver-todos"><a href="productos.html" class="boton">Ver todos los productos</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"></footer>
+  <script src="js/datos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
