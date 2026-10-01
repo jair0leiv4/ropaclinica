@@ -1,4 +1,4 @@
-# RopaClínica 🧺
+# RopaClínica 
 
 Tienda online de ropa de cama y de paciente para uso hospitalario, desarrollada para la
 Evaluación Parcial N°1 de **DSY1104 — Desarrollo Fullstack II** (DUOC UC).
