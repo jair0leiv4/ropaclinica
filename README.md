@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # RopaClínica 
 =======
 # RopaClínica — Parte 2 (React + Vite + TypeScript)
