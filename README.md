@@ -1,5 +1,5 @@
 # RopaClínica — Parte 2 (React + Vite + TypeScript)
->>>>>>> 482e1ff (Migra el proyecto a React + Vite + TypeScript con Bootstrap y React Router)
+  (Migra el proyecto a React + Vite + TypeScript con Bootstrap y React Router)
 
 Tienda online de ropa de cama y de paciente para uso hospitalario. Proyecto individual de **Jairo Leiva**
 para **DSY1104 — Desarrollo Fullstack II** (DUOC UC).
@@ -41,7 +41,7 @@ Recorrido: **Inicio → Productos → Ver detalle → Volver al catálogo → Ca
 
 
 
-=======
+
 ## Estructura (Atomic Design)
 
 ```
