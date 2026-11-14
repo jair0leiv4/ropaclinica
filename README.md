@@ -68,4 +68,4 @@ src/
 - **Responsivo:** `row-cols-1 / sm-2 / md-3 / lg-4`, navbar colapsable y `container` de Bootstrap.
 - **Validación:** funciones puras en `utils/validaciones.ts`; el formulario es un componente controlado que valida
   mientras se escribe, al salir del campo y al enviar (clases `is-valid` / `is-invalid` de Bootstrap).
->>>>>>> 482e1ff (Migra el proyecto a React + Vite + TypeScript con Bootstrap y React Router)
+
