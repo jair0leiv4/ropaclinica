@@ -1,0 +1,57 @@
+/* RopaClínica — personalización sobre Bootstrap (paleta azul-morado) */
+:root {
+  --bs-body-bg: #f5f6fd;
+  --bs-body-color: #1e2140;
+  --bs-body-font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --rc-azul: #3b5bdb;
+  --rc-violeta: #7048e8;
+  --rc-indigo: #1b1f4b;
+  --rc-lila: #c5b3ff;
+  --rc-degradado: linear-gradient(135deg, var(--rc-azul), var(--rc-violeta));
+}
+
+h1, h2, h3, .h1, .h2, .h3 { color: var(--rc-indigo); letter-spacing: -0.01em; }
+.hero h1 { color: #fff; }
+.titulo-seccion { font-weight: 800; }
+
+/* Marca y navegación */
+.logo { font-weight: 800; background: var(--rc-degradado); -webkit-background-clip: text; background-clip: text; color: transparent !important; }
+.navbar .nav-link { font-weight: 600; color: var(--rc-indigo); border-bottom: 2px solid transparent; }
+.navbar .nav-link:hover, .navbar .nav-link.active { color: var(--rc-violeta); border-color: var(--rc-violeta); }
+
+/* Botones */
+.btn-rc { background: var(--rc-degradado); color: #fff; border: 0; font-weight: 700; border-radius: 999px; padding-inline: 1.4rem; }
+.btn-rc:hover, .btn-rc:focus-visible { color: #fff; transform: translateY(-1px); box-shadow: 0 8px 18px rgba(112, 72, 232, .35); }
+.btn-outline-rc { color: var(--rc-violeta); border: 1.5px solid var(--rc-violeta); background: transparent; font-weight: 700; border-radius: 999px; }
+.btn-outline-rc:hover, .btn-outline-rc:focus-visible, .btn-outline-rc[aria-pressed="true"] { color: #fff; background: var(--rc-violeta); }
+.btn-light { border-radius: 999px; padding-inline: 1.6rem; }
+.btn { transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease; }
+
+/* Hero */
+.hero {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(59, 91, 219, .55), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(112, 72, 232, .6), transparent 55%),
+    var(--rc-indigo);
+}
+.eyebrow { display: inline-block; color: var(--rc-lila); background: rgba(197, 179, 255, .14); border: 1px solid rgba(197, 179, 255, .35); padding: .3rem 1rem; border-radius: 999px; font-weight: 600; font-size: .9rem; margin-bottom: 1rem; }
+.hero-texto { max-width: 52ch; color: #cfd3f5; }
+
+/* Tarjetas e imágenes: tamaño uniforme para todos los productos */
+.tarjeta-producto { border: 0; border-radius: 16px; box-shadow: 0 12px 32px rgba(59, 91, 219, .12); overflow: hidden; transition: transform .15s ease; }
+.tarjeta-producto:hover { transform: translateY(-3px); }
+.img-producto { object-fit: cover; width: 100%; background: #e6e9ff; }
+.img-card { height: 180px; }
+.img-detalle { height: auto; aspect-ratio: 4 / 3; border-radius: 16px; box-shadow: 0 12px 32px rgba(59, 91, 219, .12); }
+.img-mini { width: 72px; height: 72px; border-radius: 12px; flex: none; }
+.precio { color: var(--rc-violeta); }
+.badge-adulto { background: #dbe4ff; color: #2b44b8; }
+.badge-ped { background: #e5dbff; color: #5a2fc9; }
+
+.video-caja { max-width: 720px; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 32px rgba(59, 91, 219, .12); }
+.formulario-pedido { max-width: 560px; border-top: 5px solid var(--rc-violeta) !important; border-radius: 16px; }
+
+.form-control:focus, .form-select:focus { border-color: var(--rc-violeta); box-shadow: 0 0 0 .25rem rgba(112, 72, 232, .18); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--rc-lila); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

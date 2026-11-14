@@ -1,61 +1,74 @@
+<<<<<<< HEAD
 # RopaClínica 
+=======
+# RopaClínica — Parte 2 (React + Vite + TypeScript)
+>>>>>>> 482e1ff (Migra el proyecto a React + Vite + TypeScript con Bootstrap y React Router)
 
-Tienda online de ropa de cama y de paciente para uso hospitalario, desarrollada para la
-Evaluación Parcial N°1 de **DSY1104 — Desarrollo Fullstack II** (DUOC UC).
+Tienda online de ropa de cama y de paciente para uso hospitalario. Proyecto individual de **Jairo Leiva**
+para **DSY1104 — Desarrollo Fullstack II** (DUOC UC).
 
-Proyecto individual de **Jairo Leiva**.
+- **Evaluación Parcial N°1:** sitio con HTML, CSS y JavaScript puro (ver historial de Git).
+- **Evaluación Parcial N°2 (esta versión):** migración del frontend a **React + Vite + TypeScript**, con
+  **Bootstrap**, **React Router**, **Atomic Design** y formularios con validación.
 
-## Descripción
+## Tecnologías
 
-RopaClínica es una tienda web de 4 páginas construida con HTML, CSS y JavaScript puro
-(sin frameworks ni librerías externas). Los datos del catálogo viven en un arreglo de
-JavaScript y el carrito se guarda en `localStorage` del navegador, por lo que el sitio
-funciona completo sin necesidad de un servidor.
+| Tecnología | Uso |
+|---|---|
+| React 19 + Vite | Interfaz basada en componentes y servidor de desarrollo |
+| TypeScript | Tipado de props, estado, datos y validaciones (interfaces) |
+| Bootstrap 5 | Diseño responsivo (grid, navbar, cards, formularios) |
+| React Router | Navegación, ruta dinámica `/productos/:id` y `useParams()` |
+| Vitest + Testing Library | Pruebas de componentes y de validaciones |
 
-### Catálogo
-
-10 prendas en dos versiones (adulto y pediátrica): sábana con elástico, sábana lisa,
-cobertor, cubrecama y camisa de paciente.
-
-## Páginas
-
-| Página | Archivo | Descripción |
-|---|---|---|
-| Inicio | `index.html` | Hero, video informativo y productos destacados |
-| Productos | `productos.html` | Catálogo completo |
-| Detalle | `producto.html` | Detalle de un producto y productos relacionados |
-| Carrito | `carrito.html` | Carrito, cupón de descuento y formulario de pedido con validación en tiempo real |
-
-## Estructura del proyecto
-
-```
-├── index.html
-├── productos.html
-├── producto.html
-├── carrito.html
-├── css/
-│   └── estilos.css
-├── js/
-│   ├── app.js        # lógica compartida: menú, catálogo, carrito, validación
-│   └── datos.js       # "base de datos" de prueba (arreglo de productos)
-└── media/
-    └── cuidado-ropa-clinica.mp4
-```
-
-## Cómo verlo localmente
-
-No requiere instalación. Basta con servir la carpeta con cualquier servidor estático, por ejemplo:
+## Cómo ejecutarlo
 
 ```bash
-python3 -m http.server 8000
+npm install
+npm run dev       # servidor de desarrollo -> http://localhost:5173
+npm run test      # ejecuta las pruebas
+npm run build     # compila para producción (carpeta dist/)
 ```
 
-y abrir `http://localhost:8000/index.html`. (Abrir el `index.html` directo con doble clic
-también funciona, salvo el video en algunos navegadores por política de archivos locales.)
+## Rutas
 
-## Documentación
+| Ruta | Página |
+|---|---|
+| `/` | Inicio: hero, video y destacados |
+| `/productos` | Catálogo completo con filtro por categoría |
+| `/productos/:id` | Detalle (una sola página para los 10 productos, usa `useParams`) |
+| `/carrito` | Carrito, cupón `DUOC10` y formulario de pedido con validación |
+| `*` | 404 |
 
-El detalle de requerimientos, mockups y especificación completa está en el documento ERS
-(Anexo 4) y en la Planilla de Requerimientos (Anexo 2), entregados junto con este repositorio.
+Recorrido: **Inicio → Productos → Ver detalle → Volver al catálogo → Carrito → Confirmar pedido**.
 
+<<<<<<< HEAD
 
+=======
+## Estructura (Atomic Design)
+
+```
+src/
+├── components/
+│   ├── atoms/        Boton, Precio, Etiqueta, ImagenProducto, EnlaceNav, Entrada
+│   ├── molecules/    TarjetaProducto, BotonAgregar, CampoFormulario, ControlCantidad,
+│   │                 FilaCarrito, FormularioCupon, IndicadorCarrito, TituloSeccion
+│   ├── organisms/    BarraNavegacion, PieDePagina, Hero, VideoInformativo, GrillaProductos,
+│   │                 DetalleProducto, ListaCarrito, ResumenCarrito, FormularioPedido
+│   └── templates/    PlantillaPrincipal (navbar + <Outlet/> + footer)
+├── pages/            Inicio, Productos, ProductoDetalle, Carrito, NoEncontrado
+├── context/          CarritoContext (estado global del carrito, persistido en localStorage)
+├── data/             productos.ts (catálogo de 10 productos)
+├── types/            Producto.ts (interfaces)
+├── utils/            formato.ts, validaciones.ts
+└── test/             pruebas automatizadas
+```
+
+## Decisiones clave
+
+- **Reutilización:** todos los productos se dibujan con el mismo `TarjetaProducto`; sólo cambian las props.
+- **Estado:** `useState` local (cantidad, filtro, formulario, menú) y `Context API` para el carrito compartido.
+- **Responsivo:** `row-cols-1 / sm-2 / md-3 / lg-4`, navbar colapsable y `container` de Bootstrap.
+- **Validación:** funciones puras en `utils/validaciones.ts`; el formulario es un componente controlado que valida
+  mientras se escribe, al salir del campo y al enviar (clases `is-valid` / `is-invalid` de Bootstrap).
+>>>>>>> 482e1ff (Migra el proyecto a React + Vite + TypeScript con Bootstrap y React Router)
