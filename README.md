@@ -1,5 +1,3 @@
-# RopaClínica 
-=======
 # RopaClínica — Parte 2 (React + Vite + TypeScript)
 >>>>>>> 482e1ff (Migra el proyecto a React + Vite + TypeScript con Bootstrap y React Router)
 
