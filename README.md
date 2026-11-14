@@ -39,7 +39,7 @@ npm run build     # compila para producción (carpeta dist/)
 
 Recorrido: **Inicio → Productos → Ver detalle → Volver al catálogo → Carrito → Confirmar pedido**.
 
-<<<<<<< HEAD
+
 
 =======
 ## Estructura (Atomic Design)
